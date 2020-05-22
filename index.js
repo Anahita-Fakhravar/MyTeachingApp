@@ -3,9 +3,9 @@
  */
 
 import {Navigation} from 'react-native-navigation';
-import App from './App';
+import Login from './src/screens/Login';
 
-Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
+Navigation.registerComponent('myLogin', () => Login);
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
@@ -13,7 +13,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                 children: [
                     {
                         component: {
-                            name: 'com.myApp.WelcomeScreen',
+                            name: 'myLogin',
                         },
                     },
                 ],
