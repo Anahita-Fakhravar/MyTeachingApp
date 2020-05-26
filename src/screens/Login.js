@@ -1,12 +1,13 @@
 import React from 'react';
 import {Text, StyleSheet,View} from 'react-native';
+import {Strings} from '../assets/Strings'
+import {Colors} from '../assets/Colors'
 
 const Login = () => {
 
     return (
         <View>
-            <Text style={styles.txt}>Welcome to FoodLand</Text>
-            <Text style={styles.txt1}>Welcome </Text>
+            <Text style={styles.welcomeTxt}>{Strings.welcomeTxt}</Text>
         </View>
     )
 
@@ -14,13 +15,12 @@ const Login = () => {
 };
 const styles = StyleSheet.create({
 
-    txt:{
-        color:'red',
-        fontSize:30,
+    welcomeTxt:{
+        color: Colors.txtColor,
+        fontSize:20,
+        fontFamily:'PlayfairDisplay'
     },
-    txt1:{
-        color:'green'
-    }
+
 });
 
 export default Login;
