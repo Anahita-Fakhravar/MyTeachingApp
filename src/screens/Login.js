@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, View, Image} from 'react-native';
+import {Text, StyleSheet, View, Image,TextInput} from 'react-native';
 import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
@@ -7,19 +7,28 @@ import {loginImg, myFontFamily} from '../Constant';
 const Login = () => {
 
     return (
-        <View>
+        <View style={{alignItems:'center'}}>
             <Image style={{
                 width: 150,
                 height: 150,
             }}
                    source={loginImg}/>
-            <Image style={{
-                width: 150,
-                height: 150,
-                resizeMode:'repeat'
-            }}
-                   source={{uri:'https://i.pinimg.com/564x/f3/45/35/f3453532acec383c3e36b140cd0c8c14.jpg'}}/>
             <Text style={styles.welcomeTxt}>{Strings.welcomeTxt}</Text>
+            <TextInput style={{
+                borderWidth: 0.5,
+                borderColor:Colors.txtColor,
+                borderRadius:10,
+                paddingVertical:5,
+                width:300,
+                paddingHorizontal:10
+            }}
+                       placeholder={'Enter your name...'}
+                       secureTextEntry={false}
+                       keyboardType='email-address'
+                       multiline={true}
+                       maxLength={10}
+                       autocorrect={false}
+            />
         </View>
     )
 
