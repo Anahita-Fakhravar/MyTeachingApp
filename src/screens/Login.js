@@ -1,10 +1,27 @@
 import React from 'react';
-import {Text, StyleSheet, View, Image, TextInput} from 'react-native';
+import {
+    Text,
+    StyleSheet,
+    View,
+    Image,
+    TextInput,
+    Button,
+    Alert,
+    TouchableHighlight,
+    TouchableWithoutFeedback,
+    TouchableOpacity,
+
+} from 'react-native';
 import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
 
 const Login = () => {
+
+    function onClick(title) {
+
+        Alert.alert(title, 'You pressed me!');
+    }
 
     return (
 
@@ -20,6 +37,54 @@ const Login = () => {
                        maxLength={10}
                        autocorrect={false}
             />
+            <View style={{width: 300, marginTop: 10}}>
+                <Button
+                    title={'Press me'}
+                    color={Colors.btnColor}
+                    onPress={() => onClick('Button')}
+                />
+            </View>
+            <TouchableHighlight
+                onPress={() => onClick('TouchableHighlight')}
+                activeOpacity={0.5}
+                underlayColor={Colors.txtColor}
+                style={{width: 300, marginTop: 10}}>
+                <Text style={{
+                    backgroundColor: Colors.btnColor,
+                    color: '#fff',
+                    padding: 10,
+                    textAlign: 'center',
+                    borderRadius: 10
+                }}>Press me</Text>
+            </TouchableHighlight>
+
+            <View style={{width: 300, marginTop: 10}}>
+
+                <TouchableWithoutFeedback
+                    onPress={() => onClick('TouchableWithoutFeedback')}>
+                    <Text style={{
+                        backgroundColor: Colors.btnColor,
+                        color: '#fff',
+                        padding: 10,
+                        textAlign: 'center',
+                        borderRadius: 10
+                    }}>Press me</Text>
+                </TouchableWithoutFeedback>
+
+            </View>
+
+            <TouchableOpacity
+                style={{width: 300, marginTop: 10}}
+                onPress={() => onClick('TouchableOpacity')}>
+                <Text style={{
+                    backgroundColor: Colors.btnColor,
+                    color: '#fff',
+                    padding: 10,
+                    textAlign: 'center',
+                    borderRadius: 10
+                }}>Press me</Text>
+            </TouchableOpacity>
+
         </View>
     )
 
