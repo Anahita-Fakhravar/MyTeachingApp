@@ -37,52 +37,11 @@ const Login = () => {
                        maxLength={10}
                        autocorrect={false}
             />
-            <View style={{width: 300, marginTop: 10}}>
-                <Button
-                    title={'Press me'}
-                    color={Colors.btnColor}
-                    onPress={() => onClick('Button')}
-                />
-            </View>
-            <TouchableHighlight
-                onPress={() => onClick('TouchableHighlight')}
-                activeOpacity={0.5}
-                underlayColor={Colors.txtColor}
-                style={{width: 300, marginTop: 10}}>
-                <Text style={{
-                    backgroundColor: Colors.btnColor,
-                    color: '#fff',
-                    padding: 10,
-                    textAlign: 'center',
-                    borderRadius: 10
-                }}>Press me</Text>
-            </TouchableHighlight>
-
-            <View style={{width: 300, marginTop: 10}}>
-
-                <TouchableWithoutFeedback
-                    onPress={() => onClick('TouchableWithoutFeedback')}>
-                    <Text style={{
-                        backgroundColor: Colors.btnColor,
-                        color: '#fff',
-                        padding: 10,
-                        textAlign: 'center',
-                        borderRadius: 10
-                    }}>Press me</Text>
-                </TouchableWithoutFeedback>
-
-            </View>
 
             <TouchableOpacity
-                style={{width: 300, marginTop: 10}}
+                style={styles.btn}
                 onPress={() => onClick('TouchableOpacity')}>
-                <Text style={{
-                    backgroundColor: Colors.btnColor,
-                    color: '#fff',
-                    padding: 10,
-                    textAlign: 'center',
-                    borderRadius: 10
-                }}>Press me</Text>
+                <Text style={styles.btnTxt}>{Strings.enter}</Text>
             </TouchableOpacity>
 
         </View>
@@ -111,6 +70,14 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
         width: 300,
         paddingHorizontal: 10,
+    },
+    btn:{width: 300, marginTop: 10},
+    btnTxt:{
+        backgroundColor: Colors.btnColor,
+        color: Colors.btnTxtColor,
+        padding: 10,
+        textAlign: 'center',
+        borderRadius: 10
     },
 
 });
