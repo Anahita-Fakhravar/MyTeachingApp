@@ -37,9 +37,7 @@ const Login = () => {
             <TextInput style={styles.txtInput}
                        placeholder={Strings.txtHint}
                        secureTextEntry={false}
-                       keyboardType='email-address'
                        multiline={true}
-                       maxLength={10}
                        autocorrect={false}
             />
 
@@ -57,6 +55,7 @@ const Login = () => {
 const styles = StyleSheet.create({
 
     container: {
+        marginTop:responsiveHeight(10),
         alignItems: 'center',
     },
     welcomeTxt: {
@@ -70,20 +69,28 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     txtInput: {
+        marginTop:responsiveHeight(4),
         borderWidth: 0.5,
         borderColor: Colors.borderColor,
         borderRadius: responsiveWidth(3),
-        paddingVertical: 5,
+        paddingVertical: responsiveHeight(1),
+        fontSize:responsiveFontSize(1.8),
+        fontFamily:myFontFamily.regular,
         width: responsiveWidth(80),
         paddingHorizontal: responsiveWidth(3),
+        color:Colors.txtColor
     },
-    btn:{width: responsiveWidth(60), marginTop: responsiveHeight(4)},
+    btn:{
+        width: responsiveWidth(60),
+        marginTop: responsiveHeight(4)},
     btnTxt:{
         backgroundColor: Colors.btnColor,
         color: Colors.btnTxtColor,
         padding: responsiveWidth(2),
         textAlign: 'center',
-        borderRadius: responsiveWidth(3)
+        fontSize:responsiveFontSize(1.8),
+        borderRadius: responsiveWidth(3),
+        fontFamily:myFontFamily.regular
     },
 
 });
