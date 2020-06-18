@@ -12,6 +12,11 @@ import {
     TouchableOpacity,
 
 } from 'react-native';
+import {
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize
+} from "react-native-responsive-dimensions";
 import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
@@ -56,28 +61,29 @@ const styles = StyleSheet.create({
     },
     welcomeTxt: {
         color: Colors.txtColor,
-        fontSize: 20,
+        fontSize: responsiveFontSize(2.5),
         fontFamily: myFontFamily.regular,
     },
     img: {
-        width: 150,
-        height: 150,
+        width: responsiveWidth(40),
+        height: responsiveHeight(30),
+        resizeMode: 'contain'
     },
     txtInput: {
         borderWidth: 0.5,
         borderColor: Colors.borderColor,
-        borderRadius: 10,
+        borderRadius: responsiveWidth(3),
         paddingVertical: 5,
-        width: 300,
-        paddingHorizontal: 10,
+        width: responsiveWidth(80),
+        paddingHorizontal: responsiveWidth(3),
     },
-    btn:{width: 300, marginTop: 10},
+    btn:{width: responsiveWidth(60), marginTop: responsiveHeight(4)},
     btnTxt:{
         backgroundColor: Colors.btnColor,
         color: Colors.btnTxtColor,
-        padding: 10,
+        padding: responsiveWidth(2),
         textAlign: 'center',
-        borderRadius: 10
+        borderRadius: responsiveWidth(3)
     },
 
 });
