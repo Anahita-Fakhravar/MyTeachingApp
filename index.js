@@ -14,6 +14,11 @@ Navigation.events().registerAppLaunchedListener(() => {
                     {
                         component: {
                             name: 'myLogin',
+                            options:{
+                                topBar:{
+                                    visible:false
+                                }
+                            }
                         },
                     },
                 ],
