@@ -1,3 +1,4 @@
+//Design login page
 import React from 'react';
 import {
     Text,
@@ -5,10 +6,7 @@ import {
     View,
     Image,
     TextInput,
-    Button,
     Alert,
-    TouchableHighlight,
-    TouchableWithoutFeedback,
     TouchableOpacity,
 
 } from 'react-native';
@@ -20,6 +18,7 @@ import {
 import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
+import CustomBtn from '../components/CustomBtn';
 
 const Login = () => {
 
@@ -41,11 +40,8 @@ const Login = () => {
                        autocorrect={false}
             />
 
-            <TouchableOpacity
-                style={styles.btn}
-                onPress={() => onClick('TouchableOpacity')}>
-                <Text style={styles.btnTxt}>{Strings.enter}</Text>
-            </TouchableOpacity>
+            <CustomBtn BtnOnPress={()=>onClick('btn')} BtnTitle={Strings.enter}/>
+
 
         </View>
     )
@@ -79,18 +75,6 @@ const styles = StyleSheet.create({
         width: responsiveWidth(80),
         paddingHorizontal: responsiveWidth(3),
         color:Colors.txtColor
-    },
-    btn:{
-        width: responsiveWidth(60),
-        marginTop: responsiveHeight(4)},
-    btnTxt:{
-        backgroundColor: Colors.btnColor,
-        color: Colors.btnTxtColor,
-        padding: responsiveWidth(2),
-        textAlign: 'center',
-        fontSize:responsiveFontSize(1.8),
-        borderRadius: responsiveWidth(3),
-        fontFamily:myFontFamily.regular
     },
 
 });
