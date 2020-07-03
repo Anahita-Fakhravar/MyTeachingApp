@@ -1,5 +1,5 @@
 //Design login page
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Text,
     StyleSheet,
@@ -13,8 +13,8 @@ import {
 import {
     responsiveHeight,
     responsiveWidth,
-    responsiveFontSize
-} from "react-native-responsive-dimensions";
+    responsiveFontSize,
+} from 'react-native-responsive-dimensions';
 import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
@@ -22,9 +22,11 @@ import CustomBtn from '../components/CustomBtn';
 
 const Login = () => {
 
+    const [changeColor,setChangeColor] = useState(false);
+
     function onClick(title) {
 
-        Alert.alert(title, 'You pressed me!');
+        setChangeColor(!changeColor);
     }
 
     return (
@@ -40,7 +42,14 @@ const Login = () => {
                        autocorrect={false}
             />
 
-            <CustomBtn BtnOnPress={()=>onClick('btn')} BtnTitle={Strings.enter}/>
+            <CustomBtn BtnOnPress={() => onClick('btn')}
+                       BtnTitle={Strings.enter}/>
+
+            <View style={{
+                marginTop:responsiveHeight(1),
+                backgroundColor: changeColor ? 'red' : 'blue',
+                width: responsiveWidth(20),
+                height: responsiveHeight(10)}}/>
 
 
         </View>
@@ -51,7 +60,7 @@ const Login = () => {
 const styles = StyleSheet.create({
 
     container: {
-        marginTop:responsiveHeight(10),
+        marginTop: responsiveHeight(10),
         alignItems: 'center',
     },
     welcomeTxt: {
@@ -62,19 +71,19 @@ const styles = StyleSheet.create({
     img: {
         width: responsiveWidth(40),
         height: responsiveHeight(30),
-        resizeMode: 'contain'
+        resizeMode: 'contain',
     },
     txtInput: {
-        marginTop:responsiveHeight(4),
+        marginTop: responsiveHeight(4),
         borderWidth: 0.5,
         borderColor: Colors.borderColor,
         borderRadius: responsiveWidth(3),
         paddingVertical: responsiveHeight(1),
-        fontSize:responsiveFontSize(1.8),
-        fontFamily:myFontFamily.regular,
+        fontSize: responsiveFontSize(1.8),
+        fontFamily: myFontFamily.regular,
         width: responsiveWidth(80),
         paddingHorizontal: responsiveWidth(3),
-        color:Colors.txtColor
+        color: Colors.txtColor,
     },
 
 });
