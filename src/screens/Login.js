@@ -22,11 +22,11 @@ import CustomBtn from '../components/CustomBtn';
 
 const Login = () => {
 
-    const [changeColor,setChangeColor] = useState(false);
+    const [name, setName] = useState('');
 
     function onClick(title) {
 
-        setChangeColor(!changeColor);
+        // setChangeColor(!changeColor);
     }
 
     return (
@@ -40,16 +40,13 @@ const Login = () => {
                        secureTextEntry={false}
                        multiline={true}
                        autocorrect={false}
+                       onChangeText={(value) => setName(value)}
             />
 
             <CustomBtn BtnOnPress={() => onClick('btn')}
                        BtnTitle={Strings.enter}/>
 
-            <View style={{
-                marginTop:responsiveHeight(1),
-                backgroundColor: changeColor ? 'red' : 'blue',
-                width: responsiveWidth(20),
-                height: responsiveHeight(10)}}/>
+            <Text style={{borderWidth: 0.5, borderColor: 'red'}}>{name}</Text>
 
 
         </View>
