@@ -19,14 +19,26 @@ import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
 import CustomBtn from '../components/CustomBtn';
+import {Navigation} from 'react-native-navigation';
 
-const Login = () => {
+const Login = (Props) => {
 
     const [name, setName] = useState('');
 
-    function onClick(title) {
+    console.log('Props',Props);
+
+    function onClick() {
 
         // setChangeColor(!changeColor);
+        Navigation.push(Props.componentId,{
+            component:{
+                name:'myHome',
+                passProps:{
+                    myComponentId:Props.componentId,
+                    userName:name
+                }
+            }
+        })
     }
 
     return (
@@ -43,10 +55,8 @@ const Login = () => {
                        onChangeText={(value) => setName(value)}
             />
 
-            <CustomBtn BtnOnPress={() => onClick('btn')}
+            <CustomBtn BtnOnPress={() => onClick()}
                        BtnTitle={Strings.enter}/>
-
-            <Text style={{borderWidth: 0.5, borderColor: 'red'}}>{name}</Text>
 
 
         </View>
