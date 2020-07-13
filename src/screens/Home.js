@@ -1,12 +1,17 @@
 import React from 'react';
-import {View,Text} from 'react-native';
+import {View,Text,Alert} from 'react-native';
 import CustomTopBar from '../components/CustomTopBar';
+import {menu} from '../Constant';
+import {setSideMenuVisibility} from '../functions/myNavigation';
 
 const Home = (Props)=>{
 
     return (
         <View>
-            <CustomTopBar/>
+            <CustomTopBar icon={menu}
+                          onBtnClick={()=>
+                              setSideMenuVisibility(Props.componentId,
+                                  true,true)} />
             <Text>{Props.userName}</Text>
         </View>
     )

@@ -8,11 +8,25 @@ export const pushToScreen = (componentId, screenName, data) => {
                 myComponentId: componentId,
                 userName: data,
             },
-            options:{
-                topBar:{
-                    visible:false
-                }
-            }
+            options: {
+                topBar: {
+                    visible: false,
+                },
+            },
         },
     });
+};
+
+export const setSideMenuVisibility = (componentId, visible, enable) => {
+
+    Navigation.mergeOptions(componentId, {
+
+        sideMenu: {
+            left: {
+                visible: visible,
+                enabled: enable,
+            },
+        },
+    });
+
 };
