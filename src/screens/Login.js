@@ -19,7 +19,7 @@ import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
 import CustomBtn from '../components/CustomBtn';
-import {Navigation} from 'react-native-navigation';
+import {pushToScreen} from '../functions/myNavigation'
 
 const Login = (Props) => {
 
@@ -30,15 +30,8 @@ const Login = (Props) => {
     function onClick() {
 
         // setChangeColor(!changeColor);
-        Navigation.push(Props.componentId,{
-            component:{
-                name:'myHome',
-                passProps:{
-                    myComponentId:Props.componentId,
-                    userName:name
-                }
-            }
-        })
+        pushToScreen(Props.componentId,'myHome',name)
+
     }
 
     return (
