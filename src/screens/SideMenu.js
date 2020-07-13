@@ -1,12 +1,29 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {responsiveHeight, responsiveWidth} from 'react-native-responsive-dimensions';
+import {close} from '../Constant';
+import {setSideMenuVisibility} from '../functions/myNavigation';
 
-const SideMenu = ()=>{
-    return(
-        <View style={{backgroundColor:'red',flex:1}}>
-            <Text>Side Menu</Text>
+const SideMenu = (Props) => {
+    return (
+        <View style={{backgroundColor: 'red', flex: 1}}>
+
+            <TouchableOpacity onPress={()=>
+                setSideMenuVisibility(Props.componentId,false,true)}
+                style={{
+                marginHorizontal: responsiveWidth(4),
+                marginVertical:responsiveHeight(2)
+            }}>
+
+                <Image style={{
+                    width: responsiveWidth(5),
+                    height: responsiveWidth(5),
+
+                }} source={close}/>
+
+            </TouchableOpacity>
         </View>
-    )
-} ;
+    );
+};
 
-export default SideMenu
+export default SideMenu;
