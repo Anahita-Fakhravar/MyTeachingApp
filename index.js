@@ -21,7 +21,8 @@ Navigation.events().registerAppLaunchedListener(() => {
                        children: [
                            {
                                component: {
-                                   name: 'myLogin',
+                                   id:'myHomeId',
+                                   name: 'myHome',
                                    options:{
                                        topBar:{
                                            visible:false
@@ -40,4 +41,9 @@ Navigation.events().registerAppLaunchedListener(() => {
            }
         },
     });
+    Navigation.setDefaultOptions({
+        topBar: {
+            visible: false,
+        },
+    })
 });

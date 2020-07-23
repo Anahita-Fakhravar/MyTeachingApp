@@ -8,11 +8,6 @@ export const pushToScreen = (componentId, screenName, data) => {
                 myComponentId: componentId,
                 userName: data,
             },
-            options: {
-                topBar: {
-                    visible: false,
-                },
-            },
         },
     });
 };

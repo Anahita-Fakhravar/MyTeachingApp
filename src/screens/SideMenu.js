@@ -2,7 +2,8 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {responsiveHeight, responsiveWidth} from 'react-native-responsive-dimensions';
 import {close} from '../Constant';
-import {setSideMenuVisibility} from '../functions/myNavigation';
+import {pushToScreen, setSideMenuVisibility} from '../functions/myNavigation';
+import {Colors} from '../assets/Colors';
 
 const SideMenu = (Props) => {
     return (
@@ -21,6 +22,10 @@ const SideMenu = (Props) => {
 
                 }} source={close}/>
 
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={()=>pushToScreen('myHomeId','myLogin')}>
+                <Text style={{color:'white'}}>Login</Text>
             </TouchableOpacity>
         </View>
     );

@@ -7,8 +7,7 @@ import {
     Image,
     TextInput,
     Alert,
-    TouchableOpacity,
-
+    KeyboardAvoidingView
 } from 'react-native';
 import {
     responsiveHeight,
@@ -36,23 +35,27 @@ const Login = (Props) => {
 
     return (
 
-        <View style={styles.container}>
-            <Image style={styles.img}
-                   source={loginImg}/>
-            <Text style={styles.welcomeTxt}>{Strings.welcomeTxt}</Text>
-            <TextInput style={styles.txtInput}
-                       placeholder={Strings.txtHint}
-                       secureTextEntry={false}
-                       multiline={true}
-                       autocorrect={false}
-                       onChangeText={(value) => setName(value)}
-            />
+        <KeyboardAvoidingView behavior='position'>
 
-            <CustomBtn BtnOnPress={() => onClick()}
-                       BtnTitle={Strings.enter}/>
+            <View style={styles.container}>
+                <Image style={styles.img}
+                       source={loginImg}/>
+                <Text style={styles.welcomeTxt}>{Strings.welcomeTxt}</Text>
+                <TextInput style={styles.txtInput}
+                           placeholder={Strings.txtHint}
+                           secureTextEntry={false}
+                           autocorrect={false}
+                           onChangeText={(value) => setName(value)}
+                />
+
+                <CustomBtn BtnOnPress={() => onClick()}
+                           BtnTitle={Strings.enter}/>
 
 
-        </View>
+            </View>
+        </KeyboardAvoidingView>
+
+
     )
 
         ;
