@@ -1,20 +1,20 @@
+//Side menu design
 import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {responsiveHeight, responsiveWidth} from 'react-native-responsive-dimensions';
+import {responsiveFontSize, responsiveHeight, responsiveWidth} from 'react-native-responsive-dimensions';
 import {close} from '../Constant';
 import {pushToScreen, setSideMenuVisibility} from '../functions/myNavigation';
-import {Colors} from '../assets/Colors';
 
 const SideMenu = (Props) => {
     return (
         <View style={{backgroundColor: 'red', flex: 1}}>
 
-            <TouchableOpacity onPress={()=>
-                setSideMenuVisibility(Props.componentId,false,true)}
-                style={{
-                marginHorizontal: responsiveWidth(4),
-                marginVertical:responsiveHeight(2)
-            }}>
+            <TouchableOpacity onPress={() =>
+                setSideMenuVisibility(Props.componentId, false, true)}
+                              style={{
+                                  marginHorizontal: responsiveWidth(4),
+                                  marginVertical: responsiveHeight(2),
+                              }}>
 
                 <Image style={{
                     width: responsiveWidth(5),
@@ -24,8 +24,16 @@ const SideMenu = (Props) => {
 
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=>pushToScreen('myHomeId','myLogin')}>
-                <Text style={{color:'white'}}>Login</Text>
+            <TouchableOpacity
+                onPress={() =>
+                    pushToScreen('myHomeId', 'myLogin', null,
+                    false,false)}>
+                <Text style={{
+                    color: 'white',
+                    fontSize: responsiveFontSize(2),
+                    fontWeight: 'bold',
+                    alignSelf: 'center',
+                }}>Login</Text>
             </TouchableOpacity>
         </View>
     );

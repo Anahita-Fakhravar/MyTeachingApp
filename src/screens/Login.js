@@ -7,7 +7,7 @@ import {
     Image,
     TextInput,
     Alert,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
 } from 'react-native';
 import {
     responsiveHeight,
@@ -18,18 +18,17 @@ import {Strings} from '../assets/Strings';
 import {Colors} from '../assets/Colors';
 import {loginImg, myFontFamily} from '../Constant';
 import CustomBtn from '../components/CustomBtn';
-import {pushToScreen} from '../functions/myNavigation'
+import {pushToScreen} from '../functions/myNavigation';
 
 const Login = (Props) => {
 
     const [name, setName] = useState('');
 
-    console.log('Props',Props);
-
     function onClick() {
 
-        // setChangeColor(!changeColor);
-        pushToScreen(Props.componentId,'myHome',name)
+        name !== '' ?
+            pushToScreen(Props.componentId, 'myHome',
+                name, false, true) : Alert.alert(Strings.enterYourName);
 
     }
 
@@ -38,9 +37,12 @@ const Login = (Props) => {
         <KeyboardAvoidingView behavior='position'>
 
             <View style={styles.container}>
+
                 <Image style={styles.img}
                        source={loginImg}/>
+
                 <Text style={styles.welcomeTxt}>{Strings.welcomeTxt}</Text>
+
                 <TextInput style={styles.txtInput}
                            placeholder={Strings.txtHint}
                            secureTextEntry={false}
@@ -50,7 +52,6 @@ const Login = (Props) => {
 
                 <CustomBtn BtnOnPress={() => onClick()}
                            BtnTitle={Strings.enter}/>
-
 
             </View>
         </KeyboardAvoidingView>
