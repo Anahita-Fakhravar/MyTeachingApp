@@ -1,3 +1,5 @@
+//Navigation functions
+
 import {Navigation} from 'react-native-navigation';
 
 export const pushToScreen = (componentId, screenName, data, visibility, enable) => {
@@ -8,14 +10,14 @@ export const pushToScreen = (componentId, screenName, data, visibility, enable) 
                 myComponentId: componentId,
                 userName: data,
             },
-            options:{
-                sideMenu:{
-                    left:{
-                        visible:visibility,
-                        enabled:enable
-                    }
-                }
-            }
+            options: {
+                sideMenu: {
+                    left: {
+                        visible: visibility,
+                        enabled: enable,
+                    },
+                },
+            },
         },
     });
 };

@@ -1,4 +1,5 @@
 //Design login page
+
 import React, {useState} from 'react';
 import {
     Text,
@@ -54,13 +55,11 @@ const Login = (Props) => {
                            BtnTitle={Strings.enter}/>
 
             </View>
+
         </KeyboardAvoidingView>
-
-
-    )
-
-        ;
+    );
 };
+
 const styles = StyleSheet.create({
 
     container: {
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     welcomeTxt: {
-        color: Colors.txtColor,
+        color: Colors.txtOnLightTheme,
         fontSize: responsiveFontSize(2.5),
         fontFamily: myFontFamily.regular,
     },
@@ -87,7 +86,7 @@ const styles = StyleSheet.create({
         fontFamily: myFontFamily.regular,
         width: responsiveWidth(80),
         paddingHorizontal: responsiveWidth(3),
-        color: Colors.txtColor,
+        color: Colors.txtOnLightTheme,
     },
 
 });

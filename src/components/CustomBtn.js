@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
         width: responsiveWidth(60),
         marginTop: responsiveHeight(4)},
     btnTxt:{
-        backgroundColor: Colors.btnColor,
-        color: Colors.btnTxtColor,
+        backgroundColor: Colors.darkTheme,
+        color: Colors.txtOnDarkTheme,
         padding: responsiveWidth(2),
         textAlign: 'center',
         fontSize:responsiveFontSize(1.8),

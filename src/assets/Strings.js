@@ -1,6 +1,14 @@
+// project strings
+
 export const Strings ={
 
     welcomeTxt:'Welcome to FoodLand',
     txtHint:'Enter your name...',
     enter:'Enter',
+    enterYourName:'Please enter your name',
+    login:'Login',
+    foodMenu:'Food menu',
+    contactUs:'Contact us',
+    aboutUs:'About us'
+
 };
