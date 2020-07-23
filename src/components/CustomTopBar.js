@@ -9,7 +9,7 @@ const CustomTopBar = ({icon, onBtnClick}) => {
     return (
         <View style={topBarStyles.container}>
 
-            <TouchableOpacity onPress={onBtnClick}>
+            <TouchableOpacity style={topBarStyles.img} onPress={onBtnClick}>
                 <Image style={topBarStyles.img} source={icon}/>
             </TouchableOpacity>
 
