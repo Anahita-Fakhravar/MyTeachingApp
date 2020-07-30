@@ -9,17 +9,21 @@ const StaggeredView = () => {
     return (
 
         <View style={{
-            flexDirection:'row',
-            flexWrap:'wrap',
-            backgroundColor:'red',
-            flex:1,
-            justifyContent:'center',
-            alignContent:'center'
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            backgroundColor: 'red',
+            flex: 1,
+            alignItems:'baseline'
+          //  justifyContent: 'center',
+          //  alignContent: 'center',
         }}>
 
-            <Text style={styles.txt}>100</Text>
-            <Text style={styles.txt}>200</Text>
-            <Text style={styles.txt}>300</Text>
+            <Text style={[styles.txt,
+                {height: responsiveHeight(10)}]}>100</Text>
+            <Text style={[styles.txt,
+                {height: responsiveHeight(15)}]}>200</Text>
+            <Text style={[styles.txt,
+                {height: responsiveHeight(20)}]}>300</Text>
 
         </View>
     );
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         color: 'white',
         width: responsiveWidth(20),
-        height: responsiveHeight(12),
+
         textAlign: 'center',
         textAlignVertical: 'center',
         borderRadius: responsiveWidth(2),
