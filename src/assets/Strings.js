@@ -9,6 +9,10 @@ export const Strings ={
     login:'Login',
     foodMenu:'Food menu',
     contactUs:'Contact us',
-    aboutUs:'About us'
+    aboutUs:'About us',
+    delivery:'Fast Delivery',
+    healthy:'Healthy Food',
+    delicious:'Delicious Food',
+    romantic:'Romantic Ambience'
 
 };
