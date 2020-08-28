@@ -9,27 +9,14 @@ import {responsiveHeight, responsiveWidth} from 'react-native-responsive-dimensi
 const Home = (Props) => {
 
     return (
-        <View>
+        <View style={{flex:1}}>
 
             <CustomTopBar icon={menu}
                           onBtnClick={() =>
                               setSideMenuVisibility(Props.componentId,
                                   true, true)}/>
 
-            <View style={{
-                width: responsiveWidth(50),
-                marginTop: responsiveHeight(10),
-                alignSelf:'center'
-            }}>
-
-                <Button title='Learn flexBox'
-
-                        onPress={() =>
-                            pushToScreen('myHomeId',
-                                'myStaggeredView',
-                                null, false, true)}/>
-            </View>
-
+           <StaggeredView/>
 
         </View>
     );
